@@ -1,0 +1,33 @@
+def trapping_rain(buildings):
+    rain_sum = 0
+    
+    for i in range(1,len(buildings)-1):
+        leftop = max(buildings[:i])
+        rightop = max(buildings[i:])
+        current = buildings[i]
+
+        
+        if leftop >= rightop:
+            
+            a = (rightop-current)
+            if a < 0:
+                continue
+            else:
+                rain_sum += (a)
+                
+        else:
+            
+            b = (leftop-current)
+            if b < 0:
+                continue
+            else:
+                rain_sum += (b)
+        
+        continue
+        
+    return(rain_sum)
+
+
+print(trapping_rain([3, 0, 0, 2, 0, 4]))
+print(trapping_rain([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]))
+
