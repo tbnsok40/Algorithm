@@ -53,4 +53,13 @@ def floyd(arr,p):
         for j in range(number):
             print('%2d' %p[i][j], end=' ')
         print('\n')
+
+def path(s,d):
+
+    if(p[s][d] != 0):
+        path(s, p[s][d])
+        print('→',p[s][d])
+        path(p[s][d], d)
+
 floyd(arr,p)
+path(6,2)
