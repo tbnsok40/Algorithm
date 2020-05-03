@@ -1,6 +1,8 @@
 # Codeit_Algorithm class
 
-# SWEA d1, d2 ...
+# SWEA
+- d1 
+- d2
 
 # Algorithm class (in major course)
 - Prim, Kruskal
