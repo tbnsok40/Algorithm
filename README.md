@@ -6,3 +6,4 @@
 - Prim, Kruskal
 - Optimal BST
 - Floyd
+- (DP) Matrix chain multiplication
