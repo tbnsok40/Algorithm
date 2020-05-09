@@ -26,7 +26,6 @@
 # print(max_key)
 
 editted_letter = sorted(input().upper()) + ['.']
-# editted_letter = letter + ['.']
 tmp, sum = None, 1
 bag = {}
 for elements in editted_letter:
@@ -52,3 +51,20 @@ if len(bag_list)>1:
     print('?')
 else:
     print(bag_list[0])
+
+
+
+
+
+# string = input()
+# counting = {char: 0 for char in 'ABCDEFG'}
+# for alpha in string:
+#     counting[alpha] += 1
+#
+# for key in counting:
+#     if counting[key] == max_count:
+#         result = '?'
+#     elif counting[key] >max_count:
+#         max_count = counting[key]
+#         result = key
+# print(result)

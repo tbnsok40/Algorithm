@@ -1,57 +1,50 @@
-# # li = ['ji','ga','mi','ji','my','ji','ga']
-# #
-# # W = 20
-# # L = -15
-# # dict = {
-# # }
-# #
-# # name, wl = (input().split())
-# # if wl == 'W':
-# #     wl = 20
-# # else:
-# #     wl = -15
-# #
-# # dict.setdefault(name, wl)
-# # print(dict)
+# N, P = map(int, input().split())
+# W, L, maxScore = map(int, input().split())  # max를 변수로 지정해버리면 메서드를 못슨다.
+# name_set = set()
+# game_set = list()
+# sum = 0
 #
-dict={}
-N, P = input().split()
-W, L, max = input().split()
-for n in range(int(P)):
-    name, wl = (input().split())
-    if wl == 'W':
-        wl = 20
-    else:
-        wl = -15
-    dict.setdefault(name,wl)
+# for n in range(P):
+#     name, wl = (input().split())
+#     if wl == 'W':
+#         name_set.add(name)
+#
+# for n in range(N):
+#     player = input()
+#     game_set.append((player))
+#
+# for i in range(N):
+#     if i != N-1:
+#         if game_set[i] in name_set:
+#             sum += W
+#             if sum >= maxScore:
+#                 print('I AM NOT IRONMAN!!')
+#                 break
+#         else:
+#             sum -= L
+#             if sum < 0:
+#                 sum = 0
+#     else:
+#         if game_set[i] in name_set:
+#             sum += W
+#             if sum >= maxScore:
+#                 print('I AM NOT IRONMAN!!')
+#             else:
+#                 print("I AM IRONMAN!!")
+#         else:
+#             print('I AM IRONMAN!!')
+#
+# # sum이 maxScore를 넘겨버릴 수 있다.
+input = __import__('sys').stdin.readline
+n, m = map(int, input().split())
+w, l, g = map(int, input().split())
+s = { u for u, v in (input().split() for _ in range(m)) if v == 'W' }
+t = 0
+for _ in range(n):
+	if input()[:-1] in s: t += w
 
-sum = 0
-li = []
-for n in range(int(N)):
-    name = input()
-    li.append(name)
-
-for i in range(len(li)):
-    name = str(li[i])
-
-    if name in dict:
-        sum += dict[name]
-
-        if sum == 100:
-            print('I AM NOT IRONMAN!!')
-            break
-        else:
-            if sum < 0:
-                sum = 0
-            else:
-                if i == (len(li) - 1):
-                    print('I AM IRONMAN!!')
-
-
-    else:
-        sum = sum - 15
-        if sum < 0:
-            sum = 0
-
-        if i == (len(li) - 1):
-            print('I AM IRONMAN!!')
+	else: t = max(0, t - l)
+	if t >= g:
+		print('I AM NOT IRONMAN!!')
+		exit()
+print('I AM IRONMAN!!')
