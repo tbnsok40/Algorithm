@@ -16,3 +16,5 @@ for j in range(1, len(lis)):
     sum += result
     # print('sum',sum)
 print(sum)
+
+

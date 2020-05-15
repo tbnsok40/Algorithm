@@ -2,7 +2,6 @@ x, y = map(int, input().split())
 전체리스트 = []
 # for j in range(y//4 + 1):
 #     전체리스트.append([i for i in range(1+4*j,5+4*j)])
-
 if x%4 !=0:
     height_x = x//4
     width_x = x%4 -1
