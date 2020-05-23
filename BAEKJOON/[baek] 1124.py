@@ -26,40 +26,42 @@
 #             count +=1
 #     if count in 소수:
 #         answer.append(a)
+# count 다시 잘 짜봐래+에라토스테네스
 
-# n번의 논문 제출: len(n)
-n = int(input())
-papers =list(map(int, input().split()))
-# for _ in range(n):
-#     papers.append(int(input()))
-# [8, 4, 5, 3, 10]
-# [3,4,5,8,10]
-papers = sorted(papers)
-# step1) k번 이상 인용된 논물이 k편 이상: n[i] > n[j] ==> count ++ ==> count <= k
-# for i in range(n):
-#     for j in range(papers[i+1:]):
-#         if papers[i] < j:
-#             count += 1
-#             # if count == papers[i]:
-#             #     break
-#     if count >= papers[i]: #step1 충족
+# import sys
+# r_input = sys.stdin.readline() # standard_input
+# array = list()
+# def run():
+#     a, b = map(int, r_input().split())
+#     for i in range(a,b+1):
+#         array.append(i)
+#     print(array)
 #
-#         for k in range(papers[:i]):
-#             if k
+#     return True
 #
+# if __name__ == '__main__':
+#     run()
 
 
-qindex = 0
-# step2) 나머지 n-k(>=0)편의 논문들 인용횟수가 k이하이면 인덱스는 k.
-for i in range(n):
-    print(i)
-    if papers[i] <= len(papers[i:]): #step1 satisfied
-        print(papers[i], papers[i:])
-        for j in (papers[:i]):
-            print('papers[:%d],'%i ,papers[:i])
-            print('j:',j)
-            if j <= papers[i]:
-                qindex = papers[i]
-                print('qindex:',qindex)
-print(qindex)
-print(papers)
+# 에라토스테네스의 체
+
+# array = list()
+# a,b = map(int, input().split())
+# for i in range(a,b+1):
+#     array.append(i)
+est = [0]
+for i in range(1, 10001):
+    est.append(1)
+
+for i in range(4,10001,2):
+    est[i] = 0
+for i in range(6,10001,3):
+    est[i] = 0
+for i in range(10,10001,5):
+    est[i] = 0
+for i in range(14,10001,7):
+    est[i] = 0
+for i in range(22,10001,11):
+    est[i] = 0
+    
+print((est))
