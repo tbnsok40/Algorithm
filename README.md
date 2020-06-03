@@ -10,6 +10,6 @@
 - Floyd
 - (DP) Matrix chain multiplication
 - backtracking
-
+- final term by C
 # Baekjoon_Algora (in univ)
 - 
