@@ -21,12 +21,17 @@ def solution(T):
         else:
             if node.r != None:
                 print('node.r.x:',set([node.r.x]))
+                print('value1 ',value)
                 stack.append((node.r, value | set([node.r.x])))
+                print('value2 ',stack)
 
             # 아래 조건이, elif 나 else 가 아닌 이유는 곧, 위의 조건문과 상관없다는 뜻
             if node.l != None:
                 print('node.l.x: ',set([node.l.x]))
+                print('value3 ',value)
+
                 stack.append((node.l, value | set([node.l.x])))
+                print('value4 ',stack)
 
     answer = 1
     for key in distinct.keys():
@@ -40,6 +45,4 @@ print(solution(T))
 
 # # stack=[(1,3,4)]
 # # print(type(stack[0])) # this is Tuple, 이 스택은 튜플을 저장한다. 그 튜플에는 node, path, value가 포함돼있다.
-
-
 # ref: https://cyc1am3n.github.io/2019/04/26/bfs_dfs_with_python.html
